@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import './expenses.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,22 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  //TODO: let the user add expenses dynamicaly through the app
+  final List<Expenses> expenses = [
+    Expenses(
+      id: "t1",
+      title: "New shirt",
+      amount: 300,
+      date: DateTime.now(),
+    ),
+    Expenses(
+      id: "t2",
+      title: "New shoes",
+      amount: 850,
+      date: DateTime.now(),
+    )
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +39,9 @@ class MyHomePage extends StatelessWidget {
         title: const Text("Xpenses"),
       ),
       body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+
           // ignore: prefer_const_literals_to_create_immutables
           children: <Widget>[
             Container(
@@ -33,9 +53,14 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.blue,
               ),
             ),
-            Card(
-              child: Text(
-                  "LIST OF TEXT"), //TODO: add the list of texts in this widget
+            Column(
+              children: expenses.map((ex) {
+                return (Card(
+                  child: Text(ex
+                      .title), //TODO: show all information of the expenses not just title
+                  //      build the widget with more contents
+                ));
+              }).toList(),
             ),
           ]),
     );
