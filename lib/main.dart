@@ -55,10 +55,17 @@ class MyHomePage extends StatelessWidget {
             ),
             Column(
               children: expenses.map((ex) {
+                //TODO: decorate the card to look better
+                //change the date format to a more readable form
+
                 return (Card(
-                  child: Text(ex
-                      .title), //TODO: show all information of the expenses not just title
-                  //      build the widget with more contents
+                  child: Row(children: <Widget>[
+                    Text(ex.amount.toString()),
+                    Column(children: <Widget>[
+                      Text(ex.title),
+                      Text(ex.date.toString()),
+                    ])
+                  ]),
                 ));
               }).toList(),
             ),
