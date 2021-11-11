@@ -22,22 +22,24 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Xpenses"),
       ),
-      body: Column(mainAxisAlignment: MainAxisAlignment.start,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: <Widget>[
-//-----------------------------expence chart------------------------------------
-            Container(
-              // width: double.infinity,
-              child: Card(
-                child: Text(
-                    "CHART"), //TODO: add chart content instead of Text widget
-                elevation: 5,
-                color: Colors.blue,
+      body: SingleChildScrollView(
+        child: Column(mainAxisAlignment: MainAxisAlignment.start,
+            // ignore: prefer_const_literals_to_create_immutables
+            children: <Widget>[
+              //-----------------------------expence chart------------------------------------
+              Container(
+                // width: double.infinity,
+                child: Card(
+                  child: Text(
+                      "CHART"), //TODO: add chart content instead of Text widget
+                  elevation: 5,
+                  color: Colors.blue,
+                ),
               ),
-            ),
-//--------------------------##-expence chart-##---------------------------------
-            UserExpenses(),
-          ]),
+              //--------------------------##-expence chart-##---------------------------------
+              UserExpenses(),
+            ]),
+      ),
     );
   }
 }
