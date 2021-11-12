@@ -1,16 +1,21 @@
 //this is where new expenses are acceped from the user
 import 'package:flutter/material.dart';
-import './user_expenses.dart';
 
-class NewExpenses extends StatelessWidget {
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
-
+class NewExpenses extends StatefulWidget {
   final Function addNewExpense;
 
   NewExpenses(this.addNewExpense);
 
-//will submit data to expense_list so list will be created
+  @override
+  State<NewExpenses> createState() => _NewExpensesState();
+}
+
+class _NewExpensesState extends State<NewExpenses> {
+//-----------------------------submit input data--------------------------------
+
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   void submitData() {
     final String enteredTitle = titleController.text;
     final double enteredAmount = double.parse(amountController.text);
@@ -19,8 +24,10 @@ class NewExpenses extends StatelessWidget {
       return; //wont accept this conditions
     }
 
-    addNewExpense(enteredTitle, enteredAmount);
+    widget.addNewExpense(enteredTitle, enteredAmount);
+    Navigator.of(context).pop();
   }
+//--------------------------##-submit input data-##-----------------------------
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +45,7 @@ class NewExpenses extends StatelessWidget {
             ),
             controller: titleController,
             onSubmitted: (_) => submitData(),
+            autofocus: true,
           ),
           //FIXME: add logic to this so only numbers are accepted as amount
           TextField(

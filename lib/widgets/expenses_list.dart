@@ -14,7 +14,7 @@ class ExpensesList extends StatelessWidget {
 //-----------------------------expence list-------------------------------------
 
         Container(
-      height: 450,
+      height: 700,
       child: ListView.builder(
         itemBuilder: (buildContext, index) {
           //TODO: decorate the card to look better
