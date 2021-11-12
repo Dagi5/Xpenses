@@ -28,24 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-//-----------------------------expence list holder------------------------------
-//TODO: let the user add expenses dynamicaly through the app
-
-  final List<Expenses> _userExpenses = [
-    Expenses(
-      id: "t1",
-      title: "New shirt",
-      amount: 300,
-      date: DateTime.now(),
-    ),
-    Expenses(
-      id: "t2",
-      title: "New shoes",
-      amount: 850,
-      date: DateTime.now(),
-    )
-  ];
-//--------------------------##-expence list holder-##---------------------------
+//this will hold all the expence list contnent
+  final List<Expenses> _userExpenses = [];
 
 //-----------------------------new expence creater------------------------------
   void _addNewExpense(String txTitle, double txAmount) {
