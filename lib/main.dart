@@ -21,6 +21,13 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Xpenses"),
+        actions: <Widget>[
+          //light mode & dark mode button
+          IconButton(
+            icon: Icon(Icons.nights_stay_rounded),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(mainAxisAlignment: MainAxisAlignment.start,
@@ -40,6 +47,12 @@ class MyHomePage extends StatelessWidget {
               UserExpenses(),
             ]),
       ),
+      //add expense button
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
