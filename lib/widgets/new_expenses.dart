@@ -61,8 +61,12 @@ class _NewExpensesState extends State<NewExpenses> {
             // ignore: prefer_const_constructors
             child: Text(
               "Add Expense",
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+              ),
             ),
-            textColor: Colors.purple,
+            textColor: Theme.of(context).primaryColor,
             onPressed: () => submitData(),
           ),
         ],

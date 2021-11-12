@@ -30,7 +30,7 @@ class ExpensesList extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Colors.purple,
+                    color: Theme.of(context).primaryColorDark,
                     width: 2,
                   ),
                 ),
@@ -41,7 +41,7 @@ class ExpensesList extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Colors.purple,
+                    color: Theme.of(context).primaryColorDark,
                   ),
                 ),
               ),

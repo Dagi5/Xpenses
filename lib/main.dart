@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Xpenses",
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        fontFamily: "quickSand",
+      ),
       home: MyHomePage(),
     );
   }
@@ -93,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                       "CHART"), //TODO: add chart content instead of Text widget
                   elevation: 5,
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               //--------------------------##-expence chart-##---------------------------------
